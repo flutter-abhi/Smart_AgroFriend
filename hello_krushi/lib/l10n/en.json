@@ -1,6 +1,12 @@
 {
   "app_title": "Hello Krushi",
-  "job_opportunity": "Job opportunities at a click!",
-  "market_info": "Know market prices in advance",
-  "disease_identification": "Accurate disease identification"
+
+   "slider": {
+    "job_opportunity": "Job opportunities at a click!",
+    "market_info": "Know market prices in advance",
+    "disease_identification": "Accurate disease identification"
+   },
+   "home":{
+    
+   }
 }
