@@ -1,11 +1,15 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 import 'package:hello_krushi/functions/bottombar.dart';
+import 'package:hello_krushi/l10n/app_localization.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final String currentLanguage; // Add this parameter
+
+  const HomePage(
+      {super.key, required this.currentLanguage}); // Update constructor
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -14,32 +18,36 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List service = [
     {
-      "serviceName": "मजूर मिळवा",
+      "serviceName": "service_name_1", // Use keys for localization
       "backImage": "assets/labour1.png",
     },
     {
-      "serviceName": "नोकरी संधी",
+      "serviceName": "service_name_2",
       "backImage": "assets/farmer.png",
     },
     {
-      "serviceName": "बाजारभाव माहिती",
+      "serviceName": "service_name_3",
       "backImage": "assets/market.png",
     },
     {
-      "serviceName": "पशुपालन",
+      "serviceName": "service_name_4",
       "backImage": "assets/animal.png",
     },
     {
-      "serviceName": "स्मार्ट शेती",
+      "serviceName": "service_name_5",
       "backImage": "assets/smart.png",
     },
     {
-      "serviceName": "पिक रोग माहिती",
+      "serviceName": "service_name_6",
       "backImage": "assets/plant.png",
     }
   ];
+
   @override
   Widget build(BuildContext context) {
+    // Load the localization based on the selected language
+    AppLocalizations.load(Locale(widget.currentLanguage));
+
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       floatingActionButton: Container(
@@ -122,25 +130,23 @@ class _HomePageState extends State<HomePage> {
                       )
                     ]),
               ),
-
               const SizedBox(
                 height: 10,
               ),
-
               Text(
-                "आमच्या सेवा",
+                AppLocalizations.translate("home.servicesTitle") ??
+                    "Services", // Use localized title
                 style: GoogleFonts.poppins(
                   fontSize: 20,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-
               Container(
                 child: GridView.builder(
                   shrinkWrap: true,
-                  physics: ScrollPhysics(parent: null),
+                  physics: const NeverScrollableScrollPhysics(),
                   itemCount: service.length,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -154,14 +160,13 @@ class _HomePageState extends State<HomePage> {
                           child: Container(
                             height: MediaQuery.of(context).size.width / 2.3,
                             width: MediaQuery.of(context).size.width / 2.3,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                                 borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(10),
                                     topRight: Radius.circular(10)),
                                 color: Colors.white,
-                                boxShadow: const [
+                                boxShadow: [
                                   BoxShadow(
-                                      // offset: Offset(2, 2),
                                       spreadRadius: 0.5,
                                       blurRadius: 1,
                                       color: Colors.grey)
@@ -173,65 +178,36 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                         Container(
-                            decoration: BoxDecoration(
-                                color: Colors.green.shade400,
-                                borderRadius: const BorderRadius.only(
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(10)),
-                                boxShadow: const [
-                                  BoxShadow(
-                                      offset: Offset(2, 2),
-                                      spreadRadius: 0.5,
-                                      blurRadius: 2,
-                                      color: Colors.grey)
-                                ]),
-                            width: MediaQuery.of(context).size.width / 2.3,
-                            child: Text(
-                              service[index]["serviceName"],
-                              textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.black),
-                            )),
+                          decoration: BoxDecoration(
+                              color: Colors.green.shade400,
+                              borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10)),
+                              boxShadow: const [
+                                BoxShadow(
+                                    offset: Offset(2, 2),
+                                    spreadRadius: 0.5,
+                                    blurRadius: 2,
+                                    color: Colors.grey)
+                              ]),
+                          width: MediaQuery.of(context).size.width / 2.3,
+                          child: Text(
+                            AppLocalizations.translate(
+                                    "[home][${service[index]["serviceName"]}]" ??
+                                        "er") ??
+                                "er2",
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.black),
+                          ),
+                        ),
                       ],
                     );
                   },
                 ),
               ),
-
-              const SizedBox(
-                height: 10,
-              ),
-
-              // Text("शेती विषयक अपडेट्स" ,style: GoogleFonts.poppins(fontSize: 20 ,),) ,
-              // const  SizedBox(height: 10,),
-              // Container(
-              //   child: ListView.builder(
-              //     itemCount: 5,
-              //     shrinkWrap: true,
-              //     physics: const ScrollPhysics(parent: null),
-              //     itemBuilder: (context ,index){
-              //       return  Container(
-              //          margin: EdgeInsets.only(bottom: 5),
-              //          height: MediaQuery.of(context).size.width/2.2,
-              //           width: MediaQuery.of(context).size.width/2.2,
-              //           decoration:   BoxDecoration(
-              //             borderRadius: BorderRadius.circular(10),
-              //             color: Colors.blue ,
-              //             boxShadow: const  [
-              //               BoxShadow(
-              //                 offset: Offset(2, 2),
-              //                 spreadRadius: 0.5,
-              //                 blurRadius: 2,
-              //                 color: Colors.grey
-              //               )
-              //             ]
-              //           ),
-              //         );
-              //     }
-              //     ),
-              // )
             ],
           ),
         ),

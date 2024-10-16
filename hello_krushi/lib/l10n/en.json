@@ -1,12 +1,22 @@
 {
   "app_title": "Hello Krushi",
-
-   "slider": {
-    "job_opportunity": "Job opportunities at a click!",
+  "slider": {
+    "start": "Start",
     "market_info": "Know market prices in advance",
-    "disease_identification": "Accurate disease identification"
-   },
-   "home":{
-    
-   }
+    "disease_identification": "Accurate disease identification",
+    "slider_text_1": "Job opportunities now at a click!",
+    "slider_text_2": "No need to search for jobs, Hello Krushi app brings jobs to you!",
+    "slider_text_3": "Know market prices in advance",
+    "slider_text_4": "Accurate market price predictions for higher income with 'Hello Krushi' by your side!",
+    "slider_text_5": "Accurate disease identification",
+    "slider_text_6": "Identify diseases in crops, get help from other farmers with 'Hello Krushi' app advice and increase production!"
+  },
+  "home": {
+    "service_name_1": "Labor Services",
+    "service_name_2": "Farmer Assistance",
+    "service_name_3": "Market Information",
+    "service_name_4": "Animal Care",
+    "service_name_5": "Smart Farming Solutions",
+    "service_name_6": "Plant Health Advisory"
+  }
 }

@@ -1,7 +1,7 @@
 {
   "app_title": "Hello Krushi",
   "slider": {
-    "job_opportunity": "कामाच्या संधी एका क्लिकवर!",
+    "start": "सुरू करा",
     "market_info": "बाजारभाव जाणून घ्या अगोदरच",
     "disease_identification": "रोगांची अचूक ओळख",
     "slider_text_1": "कामाच्या संधी आता एका क्लिकवर !",
@@ -11,5 +11,12 @@
     "slider_text_5": "रोगांची अचूक ओळख",
     "slider_text_6": "पिकांवरील रोग ओळखा, 'Hello Krushi' ऍप सल्ल्यासोबत इतर शेतकऱ्यांची मदत मिळवा आणि उत्पादन वाढवा!"
   },
-  "home": {}
+  "home": {
+    "service_name_1": "कामगार सेवा",
+    "service_name_2": "शेतकऱ्यांची मदत",
+    "service_name_3": "बाजार माहिती",
+    "service_name_4": "प्राणी काळजी",
+    "service_name_5": "स्मार्ट शेती उपाय",
+    "service_name_6": "पिकांच्या आरोग्य सल्ला"
+  }
 }
