@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:hello_krushi/Screens/userProfile.dart';
 import 'package:hello_krushi/functions/bottombar.dart';
 
 class HomePage extends StatefulWidget {
@@ -63,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           height: 100,
           width: 100,
         ),
-        actions: const [
+        actions:  [
           Icon(
             Icons.bookmark_outline,
             size: 30,
@@ -72,12 +73,19 @@ class _HomePageState extends State<HomePage> {
             width: 10,
           ),
           //Image.asset("assets/news.png", height: 45,width: 45,),
-          CircleAvatar(
-            radius: 15,
-            backgroundColor: Colors.green,
-            child: Icon(
-              Icons.person,
-              color: Colors.white,
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context){
+                return UserProfile();
+              }));
+            },
+            child: CircleAvatar(
+              radius: 15,
+              backgroundColor: Colors.green,
+              child: Icon(
+                Icons.person,
+                color: Colors.white,
+              ),
             ),
           ),
           SizedBox(
