@@ -4,10 +4,11 @@ import 'package:flutter/services.dart'; // Add this import
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/background.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
-import 'package:hello_krushi/Screens/homepage.dart';
+import 'package:hello_krushi/Screens/basic_screens/homepage.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hello_krushi/Screens/login_pages/whoIAm.dart';
 import 'package:lottie/lottie.dart';
-import '../l10n/app_localization.dart'; // Import your localization class
+import '../../l10n/app_localization.dart'; // Import your localization class
 
 class SliderPage extends StatefulWidget {
   const SliderPage({super.key});
@@ -78,11 +79,7 @@ class _SliderState extends State<SliderPage> {
         ],
       ),
       body: OnBoardingSlider(
-        skipTextButton: Text(
-          "Skip",
-          style: GoogleFonts.poppins(
-              fontSize: 16, color: const Color.fromARGB(255, 67, 41, 237)),
-        ),
+      
         controllerColor: Colors.green,
         totalPage: 3,
         speed: 2,
@@ -91,7 +88,9 @@ class _SliderState extends State<SliderPage> {
         onFinish: () {
           Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) {
-            return  HomePage(currentLanguage: _currentLanguage);
+            //  return  HomePage(currentLanguage: _currentLanguage);
+            return HomePage(currentLanguage: "marathi");
+          
           }));
         },
         finishButtonText:
